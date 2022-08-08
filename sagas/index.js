@@ -8,7 +8,8 @@ function* helloSaga() {
 
 function* incrementAsync() {
     console.log('run2')
-    yield call(deley, 1000)
+    let result = yield call(deley, 1000)
+    console.log('result', result)
     yield put({ type: 'INCREMENT' })
 
 }
