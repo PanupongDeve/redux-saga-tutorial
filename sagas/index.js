@@ -1,4 +1,4 @@
-import { put, takeEvery, all } from 'redux-saga/effects'
+import { put, takeEvery, all, call } from 'redux-saga/effects'
 
 const deley = (ms) => new Promise(res => setTimeout(res, ms))
 
@@ -8,7 +8,7 @@ function* helloSaga() {
 
 function* incrementAsync() {
     console.log('run2')
-    yield deley(1000)
+    yield call(deley, 1000)
     yield put({ type: 'INCREMENT' })
 
 }
